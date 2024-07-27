@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Screen Time</title>
+<link rel="stylesheet" href="styles/styles.css">
+<link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+  <div class="scorecard">
+    <header>
+      <h1>Screen Time</h1>
+      <h2>Earn Your ScreenTime!</h2>
+    
+      <div class="user-details">
+        <div class="user-input">
+          <span>Name:</span><input class="user-name">
+        </div>
+      </div>
+    
+      <div>
+        <p>In order to get more screen Time, you must complete the quest below.</p>
+        <div>
+          Earn <div class="underline"><input type="number" class="small-sized-input"></div> points in order to earn <div class="underline"><input type="number" class="small-sized-input"></div> (minutes/hours) of screen time.
+          </p>
+        </div>
+      </div>  
+  </header>
+
+    <form id="scorecard-form">
+        <table>
+            <thead>
+                <tr>
+                    <th>Task/Chore</th>
+                    <th>Points</th>
+                    <th>Points Earned</th>
+                    <th class="no-print">Action</th>
+                </tr>
+            </thead>
+            <tbody id="scorecard-body">
+                <!-- Scorecard rows will be inserted here -->
+            </tbody>
+        </table>
+        <div class="buttons">
+          <button type="button" onclick="addRow()" class="no-print">Add Custom Chore</button>
+          <button type="submit" class="no-print">Save & Print</button>
+        </div>
+    </form>
+  </div>
+  <div id="result" class="no-print"></div>
+  <script src="scripts/cookie.js"></script>
+  <script src="scripts/popup.js"></script>
+  <script src="scripts/scripts.js"></script>
+</body>
+</html>

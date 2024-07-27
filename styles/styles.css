@@ -1,0 +1,168 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding-top: 10px;
+  background-color: rgb(243, 243, 243);
+  /* background-color: rgba(238, 169, 207, 0.582); */
+}
+
+h1, h2{
+  margin: 20px 0;
+}
+
+p{
+  margin: 20px 0;
+}
+.scorecard {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #ffffff;
+}
+
+header{
+  background-color: white;
+}
+
+.user-details{
+margin-bottom: 20px;
+display: flex;
+justify-content: space-between;
+}
+
+.text-section{
+margin-bottom: 30px;
+}
+
+@media(max-width: 500px) {
+  .user-details{
+    display:block;
+  }
+}
+
+.underline {
+border-bottom: 1px solid black;
+display: inline-block;
+padding-bottom: 2px;
+}
+
+.user-name,
+.offense{
+border: none;
+border-bottom: 1px solid black;
+}
+
+.small-sized-input{
+border: none;
+}
+.user-name, .offense{ 
+width: 70%;
+}
+@media(max-width: 500px){
+  .offense, .user-name{
+  width: 50%;
+  margin-bottom: 10px;
+  }
+}
+
+@media(min-width: 501px){
+  .offense{
+  width: 70%;
+  }
+}
+
+.small-sized-input{
+width: 40px;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+th {
+  background-color: #a9c3e2;
+  /* background-color: rgb(228, 171, 213); */
+  color: white;
+}
+
+table input{
+  border: none;
+  width: 95%;
+  font-size: 13px;
+}
+
+.task-cell{
+  width: 320px;
+}
+
+.task-cell input, .points{
+  height: 6vh;
+  /* background-color: aqua; */
+}
+
+.action-column{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-btn{
+  background-color: rgb(214, 210, 210);
+  border: none;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  
+}
+
+.delete-btn:hover{
+  background-color: red;
+}
+
+.buttons{
+  display: flex;
+  align-items: center;
+}
+
+.buttons button{
+  margin-right: 10px;
+  background-color: #3d87e0;
+  color: white;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+.buttons button:hover{
+  background-color: #2f65a8;
+}
+
+.buttons button:active{
+  opacity: 0.7;
+}
+
+
+@media print {
+  .no-print{
+    display: none !important;
+  }
+}

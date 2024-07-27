@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grounded</title>
+<link rel="stylesheet" href="styles/popup.css">
+<link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+<div class="scorecard">
+  <header>
+    <h1>Parental Scorecard</h1>
+    <h2>You've been grounded!</h2>
+
+    <div class="user-details">
+      <div class="user-input">
+        <span>Name:</span><input class="user-name">
+      </div>
+      <div class="user-inputs">
+        <span>Offense:</span><input class="offense">
+      </div>
+    </div>
+
+    <div>
+      <p>In order to get ungrounded, you must complete the quest below.</p>
+      <div>
+        Earn <div class="underline"><input type="number" class="small-sized-input"></div> points in order to earn your freedom
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <form id="scorecard-form">
+      <table>
+          <thead>
+              <tr>
+                  <th>Task/Chore</th>
+                  <th>Points</th>
+                  <th>Points Earned</th>
+                  <th class="no-print">Action</th>
+              </tr>
+          </thead>
+          <tbody id="scorecard-body">
+              <!-- Scorecard rows will be inserted here -->
+          </tbody>
+      </table>
+      <div class="buttons">
+        <button type="button" onclick="addRow()" class="no-print">Add Custom Chore</button>
+        <button type="submit" class="no-print">Save & Print</button>
+      </div>
+      
+  </form>
+</div>
+<div id="result" class="no-print"></div>
+<script src="scripts/cookie.js"></script>
+<script src="scripts/popup.js"></script>
+<script src="scripts/scripts.js"></script>
+</body>
+</html>
