@@ -32,26 +32,29 @@
   margin-top: 10px;
   justify-content: center;
   align-items: center;
-  
 }
 
 .popup-input{
+  outline: 0px solid;
   border: 1px solid #767676;
   border-radius: 7px;
   margin-bottom: 10px;
   padding: 5px;
+  width: 80%;
+  
 }
 
 #popup-download-btn{
   border: none;
   padding: 10px;
   border-radius: 15px;
-  background-color: #3d87e0;
+  background-color: #446084;
   color: white;
   font-weight: bold;
 }
+
 #popup-download-btn:hover{
-  background-color: #2f65a8;
+  background-color: #52719b;
 }
 
 #cancel-popup-btn{

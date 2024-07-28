@@ -46,8 +46,8 @@ function uploadData(){
 
   //saving the cookie in cache for 2days
 
-  setCookie('TES-First-Name', firstName.value, 3);
-  setCookie('TES-Last-Name', lastName.value, 3);
+  setCookie('TES-First-Name', firstName.value, 365);
+  setCookie('TES-Last-Name', lastName.value, 365);
 
 
   const formData = new FormData(form);

@@ -9,7 +9,9 @@ const app = express()
 // configuring middleware
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
-app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:3000","http://127.0.0.1:5500"]
+}));
 
 //routes
 app.use('/api/users', userRoute)
@@ -20,12 +22,13 @@ app.get('/', (req, res)=>{
 })
 
 //connecting to the backend database
+const PORT = process.evn.PORT || 3000;
 mongoose.connect("mongodb+srv://danielope62:dIBI53cwBMNbJNKX@userinfodb.7pfk4wx.mongodb.net/?retryWrites=true&w=majority&appName=UserinfoDB")
 .then(()=>{
   console.log('Connected to the database!')
 
   //hosting the server
-  app.listen(3000, ()=>{
+  app.listen(PORT, ()=>{
     console.log('Server is running on port 3000')
   })
 })

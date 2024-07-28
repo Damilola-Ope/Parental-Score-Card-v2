@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Poppins:wght@300;400;500;600;700&display=swap');
+
 *{
   padding: 0;
   margin: 0;
@@ -5,19 +7,23 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Bubblegum Sans", sans-serif;
+  font-size: 18px;
   padding-top: 10px;
   background-color: rgb(243, 243, 243);
   /* background-color: rgba(238, 169, 207, 0.582); */
 }
 
 h1, h2{
+  text-align: center;
+  color: #446084;
   margin: 20px 0;
 }
 
 p{
   margin: 20px 0;
 }
+
 .scorecard {
   max-width: 600px;
   margin: 0 auto;
@@ -54,11 +60,17 @@ padding-bottom: 2px;
 
 .user-name,
 .offense{
+margin-left: 4px;
+font-family: "Bubblegum Sans";
+font-size: 16px;
 border: none;
+outline: 0px solid;
 border-bottom: 1px solid black;
 }
 
 .small-sized-input{
+font-family: "Bubblegum Sans";
+outline: 0px solid;
 border: none;
 }
 .user-name, .offense{ 
@@ -87,19 +99,28 @@ table {
   border-collapse: collapse;
   margin-bottom: 30px;
 }
+
+tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+tr:nth-child(even) input {
+  background-color: #f8f8f8;
+}
+
 th, td {
   padding: 10px;
   border: 1px solid #ddd;
   text-align: left;
 }
 th {
-  background-color: #a9c3e2;
-  /* background-color: rgb(228, 171, 213); */
+  background-color: #446084;
   color: white;
 }
 
 table input{
   border: none;
+  /* outline: 0px solid; */
   width: 95%;
   font-size: 13px;
 }
@@ -109,6 +130,7 @@ table input{
 }
 
 .task-cell input, .points{
+  font-family: "Bubblegum Sans", sans-serif;
   height: 6vh;
   /* background-color: aqua; */
 }
@@ -120,20 +142,19 @@ table input{
 }
 
 .delete-btn{
-  background-color: rgb(214, 210, 210);
+  background-color: red;
+  /* background-color: white; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   height: 35px;
   width: 35px;
   border-radius: 50%;
   font-weight: bold;
   color: white;
-  cursor: pointer;
-  transition: background-color 0.15s;
-  
-}
-
-.delete-btn:hover{
-  background-color: red;
+  /* color: red; */
+  cursor: pointer;  
 }
 
 .buttons{
@@ -143,7 +164,7 @@ table input{
 
 .buttons button{
   margin-right: 10px;
-  background-color: #3d87e0;
+  background-color: #446084;
   color: white;
   padding: 10px 10px;
   border: none;
@@ -153,13 +174,12 @@ table input{
 }
 
 .buttons button:hover{
-  background-color: #2f65a8;
+  background-color: #52719b;
 }
 
 .buttons button:active{
   opacity: 0.7;
 }
-
 
 @media print {
   .no-print{
