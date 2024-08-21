@@ -156,13 +156,18 @@ table input{
   /* color: red; */
   cursor: pointer;  
 }
+.delete-row-btn-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
-.buttons{
+.buttons, .butonx{
   display: flex;
   align-items: center;
 }
 
-.buttons button{
+.buttons button, .cancel-button{
   margin-right: 10px;
   background-color: #446084;
   color: white;
@@ -173,11 +178,17 @@ table input{
   transition: background-color 0.1s;
 }
 
-.buttons button:hover{
+.cancel-button{
+  border-radius: 0;
+  padding: 2.5px 15px;
+  margin: 0;
+}
+
+.buttons button:hover, .cancel-button:hover{
   background-color: #52719b;
 }
 
-.buttons button:active{
+.buttons button:active, .cancel-button:active{
   opacity: 0.7;
 }
 

@@ -37,21 +37,48 @@ function addRow(task = '', points = '', earnedPoints = '') {
     // function to delete
     function deleteRow(button) {
         /*
-        //code to make delete row confirmation
-        
-        const deleteMsg = document.createElement('div')
- 
-        let confirmDeletePopup = `
-        <p>are you sure you want to Delete?</p>
-        <button id='yes'>Yes</button>
-        <button id='no'>No</button>
-        `*/
         const row = button.closest('tr');
         const choice = 'Are you sure you want to delete this row?'
         if(confirm(choice) == true){
           scorecardBody.removeChild(row);
           saveTasksToLocalStorage(); // Save changes after deleting
         }
+        */
+        const row = button.closest('tr');
+        output.style.display = 'flex';
+        let popup = document.createElement('div');
+        popup.innerHTML= `
+        <div class= form-container>
+          <p class="popup-subtitle">Are you sure you want <br> to delete this row?</p>
+          <div>
+            <div class="delete-row-btn-container">
+            <button class="cancel-button">Yes</button>
+            <button class="cancel-button">No</button>
+            </div>
+          </div>
+        <div>
+        `;
+        output.appendChild(popup);
+        // uploadData()
+    
+        //fucntion to cancel the popup
+        let cancel = document.getElementsByClassName('cancel-button');
+    
+        //if yes is clicked
+        cancel[0].addEventListener('click', ()=>{
+          //..delete row function
+          output.style.display = 'none';
+          scorecardBody.removeChild(row);
+          saveTasksToLocalStorage();
+          popup.innerHTML = ''
+        })
+    
+        //if no is clicked
+        cancel[1].addEventListener('click', ()=>{
+          output.style.display = 'none';
+          popup.innerHTML = ''
+        })
+
     }
 
     // Save tasks to localStorage
