@@ -53,29 +53,31 @@ margin-bottom: 30px;
 }
 
 .underline {
-border-bottom: 1px solid black;
-display: inline-block;
-padding-bottom: 2px;
+  border-bottom: 1px solid black;
+  display: inline-block;
+  padding-bottom: 2px;
 }
 
 .user-name,
 .offense{
-margin-left: 4px;
-font-family: "Bubblegum Sans";
-font-size: 16px;
-border: none;
-outline: 0px solid;
-border-bottom: 1px solid black;
+  text-align: center;
+  margin-left: 4px;
+  font-family: "Bubblegum Sans";
+  font-size: 16px;
+  border: none;
+  outline: 0px solid;
+  border-bottom: 1px solid black;
+  width: 75%;
 }
 
-.small-sized-input{
+.small-sized-input1, .small-sized-input2{
+font-size: 15px;
 font-family: "Bubblegum Sans";
 outline: 0px solid;
 border: none;
+width: 45px;
 }
-.user-name, .offense{ 
-width: 70%;
-}
+
 @media(max-width: 500px){
   .offense, .user-name{
   width: 50%;
@@ -88,11 +90,6 @@ width: 70%;
   width: 70%;
   }
 }
-
-.small-sized-input{
-width: 40px;
-}
-
 
 table {
   width: 100%;

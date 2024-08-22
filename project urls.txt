@@ -1,5 +1,0 @@
-backend url
-https://parental-score-card-app.onrender.com/
-
-frontend url
-https://damilola-ope.github.io/Parental-Score-Card-app/grounded.html

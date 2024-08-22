@@ -34,79 +34,70 @@ function addRow(task = '', points = '', earnedPoints = '') {
     scorecardBody.appendChild(row);
 }
 
-    // function to delete
-    function deleteRow(button) {
-        /*
-        const row = button.closest('tr');
-        const choice = 'Are you sure you want to delete this row?'
-        if(confirm(choice) == true){
-          scorecardBody.removeChild(row);
-          saveTasksToLocalStorage(); // Save changes after deleting
-        }
-        */
-        const row = button.closest('tr');
-        output.style.display = 'flex';
-        let popup = document.createElement('div');
-        popup.innerHTML= `
-        <div class= form-container>
-          <p class="popup-subtitle">Are you sure you want <br> to delete this row?</p>
-          <div>
-            <div class="delete-row-btn-container">
-            <button class="cancel-button">Yes</button>
-            <button class="cancel-button">No</button>
-            </div>
-          </div>
+// function to delete
+function deleteRow(button) {
+    const row = button.closest('tr');
+    output.style.display = 'flex';
+    let popup = document.createElement('div');
+    popup.innerHTML= `
+    <div class= form-container>
+        <p class="popup-subtitle">Are you sure you want <br> to delete this row?</p>
         <div>
-        `;
-        output.appendChild(popup);
-        // uploadData()
-    
-        //fucntion to cancel the popup
-        let cancel = document.getElementsByClassName('cancel-button');
-    
-        //if yes is clicked
-        cancel[0].addEventListener('click', ()=>{
-          //..delete row function
-          output.style.display = 'none';
-          scorecardBody.removeChild(row);
-          saveTasksToLocalStorage();
-          popup.innerHTML = ''
-        })
-    
-        //if no is clicked
-        cancel[1].addEventListener('click', ()=>{
-          output.style.display = 'none';
-          popup.innerHTML = ''
-        })
+        <div class="delete-row-btn-container">
+        <button class="cancel-button">Yes</button>
+        <button class="cancel-button">No</button>
+        </div>
+        </div>
+    <div>
+    `;
+    output.appendChild(popup);
+    // uploadData()
 
-    }
+    //fucntion to cancel the popup
+    let cancel = document.getElementsByClassName('cancel-button');
 
-    // Save tasks to localStorage
-    function saveTasksToLocalStorage() {
-        const tasks = Array.from(scorecardBody.children).map(row => {
-            const taskInput = row.querySelector('input[name="task"]');
-            const pointsInput = row.querySelector('input[name="points"]');
-            const pointsEarnedInput = row.querySelector('input[name="points-earned"]');
-            return {
-                task: taskInput.value,
-                points: pointsInput.value,
-                pointsEarned: pointsEarnedInput.value
-            };
-        });
-        localStorage.setItem('scorecardTasks', JSON.stringify(tasks));
+    //if yes is clicked
+    cancel[0].addEventListener('click', ()=>{
+        //..delete row function
+        output.style.display = 'none';
+        scorecardBody.removeChild(row);
+        saveTasksToLocalStorage();
+        popup.innerHTML = ''
+    })
+
+    //if no is clicked
+    cancel[1].addEventListener('click', ()=>{
+        output.style.display = 'none';
+        popup.innerHTML = ''
+    })
 }
-    
-    //handle submit event
-    document.getElementById('scorecard-form').addEventListener
-    ('submit', function(event) {
-        event.preventDefault();
-        saveTasksToLocalStorage()
 
-        if(doesCookieExist()){
-            window.print();
-        } else{
-            popup();
-        }
+// Save tasks to localStorage
+function saveTasksToLocalStorage() {
+    const tasks = Array.from(scorecardBody.children).map(row => {
+        const taskInput = row.querySelector('input[name="task"]');
+        const pointsInput = row.querySelector('input[name="points"]');
+        const pointsEarnedInput = row.querySelector('input[name="points-earned"]');
+        return {
+            task: taskInput.value,
+            points: pointsInput.value,
+            pointsEarned: pointsEarnedInput.value
+        };
     });
+    localStorage.setItem('scorecardTasks', JSON.stringify(tasks));
+}
 
-    // window.onload = loadScorecard;
+
+
+//handle submit event
+document.getElementById('scorecard-form').addEventListener
+('submit', function(event) {
+    event.preventDefault();
+    saveTasksToLocalStorage()
+
+    if(doesCookieExist()){
+        window.print();
+    } else{
+        popup();
+    }
+});
